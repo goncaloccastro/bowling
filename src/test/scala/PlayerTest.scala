@@ -1,11 +1,13 @@
-import org.scalatest.{FeatureSpec, Matchers}
+import org.scalatest.{FeatureSpec, FlatSpec, Matchers}
 
 /**
   * Created by rufoseverino on 22/07/2016.
   */
 
-class PlayerTest extends FeatureSpec with Matchers{
+class PlayerTest extends FlatSpec with Matchers{
   "Player" should "be instanciated" in {
     Player() shouldBe a [Player]
   }
+
+
 }
