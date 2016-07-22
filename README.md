@@ -6,3 +6,4 @@ A simple README file so we can show that:
   - Trying to use best practices
   - Magic
   - Just another try
+  - And another
