@@ -6,7 +6,7 @@ import org.scalatest.{FeatureSpec, FlatSpec, Matchers}
 
 class PlayerTest extends FlatSpec with Matchers{
   "Player" should "be instanciated" in {
-    Player("RR", 2) shouldBe a [Player]
+    Player("RR", 3, Round()) shouldBe a [Player]
   }
 
 
