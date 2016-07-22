@@ -6,11 +6,15 @@ case class Round() {
   var plays = 2
 
   def throwBall(pins: Int): Boolean = {
-    false
+    if(plays>0) {
+      plays -= 1;
+      return true
+    }
+    return false
   }
 
   def isRoundOver(): Boolean = {
-    false
+    return(plays==0)
   }
 
   def canThrow(): Boolean = {
