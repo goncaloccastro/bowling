@@ -25,7 +25,9 @@ class RoundTest extends FlatSpec with Matchers{
 
   it should "show if the player can throw another ball" in {
     val round = Round()
-    round.canThrow()
+    round.throwBall(4)
+    round.throwBall(6)
+    round.canThrow() shouldBe false
   }
 
 }
