@@ -13,21 +13,22 @@ class RoundTest extends FlatSpec with Matchers{
 
   it should "receive the dropped pins" in {
     val round = Round()
-    round.throwBall(5)
+    val pins1 = round.throwBall(5, Nil) shouldBe List(5)
+    val pins2 = round.throwBall(5, List(5)) shouldBe List(5,5)
   }
 
   it should "show if the round is over" in {
     val round = Round()
-    round.throwBall(4)
-    round.throwBall(6)
-    round.isRoundOver() shouldBe true
+    val pins1 = round.throwBall(5, Nil)
+    val pins2 = round.throwBall(5, pins1)
+    round.isRoundOver(pins2) shouldBe true
   }
 
   it should "show if the player can throw another ball" in {
     val round = Round()
-    round.throwBall(4)
-    round.throwBall(6)
-    round.canThrow() shouldBe false
+    val pins1 = round.throwBall(5, Nil)
+    val pins2 = round.throwBall(5, pins1)
+    round.canThrow(pins2) shouldBe false
   }
 
 }

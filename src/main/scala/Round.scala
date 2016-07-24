@@ -3,22 +3,20 @@
   */
 case class Round() {
 
-  var plays = 2
-
-  def throwBall(pins: Int): Boolean = {
-    if(plays>0) {
-      plays -= 1;
-      return true
+  def throwBall(pins: Int, listPins: List[Int]): List[Int] = {
+    if(pins >= 0) {
+      val plays = pins :: listPins
+      return plays
     }
-    return false
+    Nil
   }
 
-  def isRoundOver(): Boolean = {
-    return(plays==0)
+  def isRoundOver(plays: List[Int]): Boolean = {
+    plays.size == 2
   }
 
-  def canThrow(): Boolean = {
-    false
+  def canThrow(plays: List[Int]): Boolean = {
+    return(plays.sum != 10)
   }
 
 }

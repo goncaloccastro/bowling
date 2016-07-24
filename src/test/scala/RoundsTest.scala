@@ -5,7 +5,11 @@ import org.scalatest.{FlatSpec, Matchers}
   */
 class RoundsTest extends FlatSpec with Matchers{
 
-//  "Rounds" should "be instantiated" in {
-//    Rounds() shouldBe a [List[Round]]
-//  }
+  "Rounds" should "be instantiated" in {
+    Rounds() shouldBe a [Rounds]
+  }
+
+/*  it should "have a list of rounds" in {
+    val rounds = Rounds(List[Round])
+  }*/
 }
